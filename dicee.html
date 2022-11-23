@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee Chance Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" id="img1" src="images/dice6.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" id="img2" src="images/dice6.png">
+      </div>
+
+    </div>
+
+    <script>
+      var img1 =  document.getElementById("img1")
+      var img2 =  document.getElementById("img2")
+      var imgArray = ["images/dice1.png", "images/dice2.png", "images/dice3.png", "images/dice4.png", "images/dice5.png", "images/dice6.png"];
+      var picker1 = Math.floor(Math.random() * 6)
+      var picker2 = Math.floor(Math.random() * 6)
+      var setImage1 = imgArray[picker1];
+      var setImage2 = imgArray[picker2];
+      img2.setAttribute("src", setImage2)
+      img1.setAttribute("src", setImage1)
+      var h1 = document.querySelector("h1");
+      
+      if (picker1 > picker2) {
+        h1.textContent = "Player 1 wins!"
+      } else if (picker2 > picker1) {
+        h1.textContent = "Player 2 wins!"
+      } else {
+        h1.textContent = "Oops, it's a draw!"
+      }
+
+    </script>
+
+
+  </body>
+
+  <footer>
+    Made by 🎲 Esther Ohiomame 🎲
+  </footer>
+</html>
